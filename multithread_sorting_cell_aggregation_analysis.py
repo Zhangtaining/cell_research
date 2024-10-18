@@ -73,8 +73,6 @@ def create_cell_groups_based_on_value_list(value_list, threadLock, status_probe,
             cell = SelectionSortCell(i + 1, value_list[i], threadLock, (i, 1), cells, left_boundary, right_boundary, status_probe, disable_visualization=True)
         period = random.randint(100000, 200000000)
         start_count_down = random.randint(100000, 200000000)
-        cell_group = CellGroup([cell], cells, i, (i, 1), (i, 1), GroupStatus.SLEEP, threadLock, start_count_down, period)
-        # cell.group = cell_group
 
         if cell:
             cells.append(cell)
