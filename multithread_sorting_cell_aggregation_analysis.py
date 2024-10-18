@@ -165,8 +165,6 @@ def main(argv):
         threadLock = threading.Lock()
         status_probe = StatusProbe()
         print(f">>>>>>>>>>>>>>>>> Prepare cells to sort for experiment {i} <<<<<<<<<<<<<<<<<<<<")
-        random.shuffle(sorting_list)
-
         cells, cell_groups = create_cell_groups_based_on_value_list(sorting_list, threadLock, status_probe, 100, False, True, True)
         threadLock.acquire()
         print("Activating cells...")
