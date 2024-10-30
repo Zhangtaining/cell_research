@@ -80,6 +80,8 @@ def create_cell_groups_based_on_value_list(value_list, threadLock, status_probe,
 
     period = 1000000000
     start_count_down = 1000000000
+    # The CellGroup was only used when we did the visualization and group sorting, but we didn't use that concepts in experiments mentioned
+    # in the paper, so we assume all the cells are put into one single CellGroup.
     cell_group = CellGroup(cells, cells, 0, left_boundary, right_boundary, GroupStatus.ACTIVE, threadLock, start_count_down, period)
     for cell in cells:
         cell.group = cell_group 
